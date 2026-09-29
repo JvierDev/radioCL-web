@@ -1,0 +1,87 @@
+---
+const features = [
+  {
+    title: "15 radios",
+    description: "Radios chilenas para escuchar",
+  },
+  {
+    title: "Comandos slash",
+    description: "Controla la radio fácilmente",
+  },
+  {
+    title: "Gratis y open source",
+    description: "Hecho con ❤️ para Chile",
+  },
+] as const;
+---
+
+<section class="quick-features" aria-label="Características rápidas">
+  <div class="container quick-features__grid">
+    {
+      features.map((feature) => (
+        <article class="quick-features__item">
+          <span class="quick-features__marker" aria-hidden="true" />
+          <div>
+            <h2>{feature.title}</h2>
+            <p>{feature.description}</p>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .quick-features {
+    padding-block: 0 2.5rem;
+  }
+
+  .quick-features__grid {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .quick-features__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.875rem;
+    border: 1px solid var(--color-border);
+    border-radius: 1.125rem;
+    background: rgba(11, 20, 40, 0.7);
+    padding: 1rem;
+  }
+
+  .quick-features__marker {
+    flex: 0 0 auto;
+    width: 0.625rem;
+    height: 0.625rem;
+    margin-top: 0.45rem;
+    border-radius: 2px;
+    background: var(--color-cyan);
+    box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.08);
+  }
+
+  .quick-features h2 {
+    color: var(--color-text);
+    font-size: 1rem;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+  }
+
+  .quick-features p {
+    margin-top: 0.25rem;
+    color: var(--color-text-muted);
+    font-size: 0.9375rem;
+    line-height: 1.4;
+  }
+
+  @media (min-width: 760px) {
+    .quick-features {
+      padding-bottom: 3.5rem;
+    }
+
+    .quick-features__grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+</style>
