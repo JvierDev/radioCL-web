@@ -156,27 +156,6 @@ h6 {
   background: #6671f3;
 }
 
-.temporary-home {
-  display: grid;
-  min-height: calc(100vh - 4.25rem);
-  place-items: center;
-  padding-block: 4rem;
-  text-align: center;
-}
-
-.temporary-home__title {
-  color: var(--color-text);
-  font-size: clamp(3rem, 15vw, 7rem);
-  line-height: 0.95;
-  letter-spacing: -0.08em;
-}
-
-.temporary-home__description {
-  margin-top: 1rem;
-  color: var(--color-text-muted);
-  font-size: clamp(1.125rem, 3vw, 1.5rem);
-}
-
 @media (min-width: 768px) {
   :root {
     --container-padding: 2rem;

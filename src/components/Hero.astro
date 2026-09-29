@@ -1,0 +1,246 @@
+---
+import { site } from "../data/site";
+
+const highlights = ["15 radios", "Gratis", "Hecho en Chile 🇨🇱"] as const;
+---
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <p class="hero__eyebrow">RADIO CHILENA EN DISCORD</p>
+      <h1 id="hero-title" class="hero__title">
+        La radio chilena,<br /> ahora en tu <span>Discord</span>.
+      </h1>
+      <p class="hero__description">
+        Escucha tus radios favoritas de Chile junto a tus amigos, directamente
+        desde un canal de voz.
+      </p>
+
+      <div class="hero__actions" aria-label="Acciones principales">
+        <a class="hero__button hero__button--primary" href={site.discordInviteUrl}>
+          Añadir a Discord
+        </a>
+        <a
+          class="hero__button hero__button--secondary"
+          href={site.githubUrl}
+          target="_blank"
+          rel="noreferrer"
+        >
+          Ver en GitHub
+        </a>
+      </div>
+
+      <ul class="hero__highlights" aria-label="Características destacadas">
+        {highlights.map((highlight) => <li>{highlight}</li>)}
+      </ul>
+    </div>
+
+    <div class="hero__visual" aria-label="Mascota de radioCL">
+      <span class="hero__decoration hero__decoration--note" aria-hidden="true">♪</span>
+      <span class="hero__decoration hero__decoration--wave" aria-hidden="true">)))</span>
+      <span class="hero__decoration hero__decoration--star" aria-hidden="true">+</span>
+      <div class="hero__mascot-frame">
+        <img
+          class="hero__mascot"
+          src="/assets/radiocl-mascot.png"
+          alt="Mascota de radioCL, un robot pixel art con cabeza de radio antigua"
+          width="440"
+          height="440"
+          decoding="async"
+          fetchpriority="high"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding-block: clamp(4rem, 9vw, 6.5rem);
+    overflow: hidden;
+  }
+
+  .hero__inner {
+    display: grid;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .hero__content {
+    max-width: 43rem;
+  }
+
+  .hero__eyebrow {
+    color: var(--color-cyan);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+  }
+
+  .hero__title {
+    margin-top: 1rem;
+    color: var(--color-text);
+    font-size: clamp(3rem, 12vw, 5.75rem);
+    line-height: 0.95;
+    letter-spacing: -0.075em;
+  }
+
+  .hero__title span {
+    color: var(--color-cyan);
+  }
+
+  .hero__description {
+    max-width: 35rem;
+    margin-top: 1.5rem;
+    color: var(--color-text-muted);
+    font-size: clamp(1.125rem, 4vw, 1.35rem);
+    line-height: 1.55;
+  }
+
+  .hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.875rem;
+    margin-top: 2rem;
+  }
+
+  .hero__button {
+    display: inline-flex;
+    min-height: 3rem;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 0.875rem 1.125rem;
+    font-size: 0.9375rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .hero__button--primary {
+    border-color: rgba(88, 101, 242, 0.55);
+    background: var(--color-discord);
+    color: var(--color-text);
+  }
+
+  .hero__button--primary:hover {
+    background: #6671f3;
+  }
+
+  .hero__button--secondary {
+    border-color: var(--color-border);
+    background: var(--color-surface);
+    color: var(--color-text);
+  }
+
+  .hero__button--secondary:hover {
+    border-color: rgba(34, 211, 238, 0.45);
+  }
+
+  .hero__highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+    padding: 0;
+    color: var(--color-text-muted);
+    font-size: 0.9375rem;
+    list-style: none;
+  }
+
+  .hero__highlights li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .hero__highlights li::before {
+    width: 0.375rem;
+    height: 0.375rem;
+    border-radius: 2px;
+    background: var(--color-red);
+    content: "";
+  }
+
+  .hero__visual {
+    position: relative;
+    display: grid;
+    min-height: 18rem;
+    place-items: center;
+  }
+
+  .hero__mascot-frame {
+    display: grid;
+    width: min(100%, 24rem);
+    aspect-ratio: 1;
+    place-items: center;
+    border: 1px solid var(--color-border);
+    border-radius: 2rem;
+    background:
+      radial-gradient(circle at 50% 35%, rgba(34, 211, 238, 0.12), transparent 42%),
+      var(--color-surface);
+  }
+
+  .hero__mascot {
+    width: min(82%, 20rem);
+    height: auto;
+    image-rendering: pixelated;
+  }
+
+  .hero__decoration {
+    position: absolute;
+    color: var(--color-cyan);
+    font-weight: 900;
+    line-height: 1;
+    opacity: 0.65;
+  }
+
+  .hero__decoration--note {
+    top: 10%;
+    left: 8%;
+    font-size: 1.5rem;
+  }
+
+  .hero__decoration--wave {
+    top: 21%;
+    right: 4%;
+    color: var(--color-red);
+    font-family: monospace;
+    font-size: 0.875rem;
+    letter-spacing: -0.14em;
+  }
+
+  .hero__decoration--star {
+    right: 14%;
+    bottom: 13%;
+    color: var(--color-discord);
+    font-size: 1.25rem;
+  }
+
+  @media (max-width: 479px) {
+    .hero__actions {
+      align-items: stretch;
+      flex-direction: column;
+    }
+
+    .hero__button {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .hero__inner {
+      grid-template-columns: minmax(0, 1.1fr) minmax(18rem, 0.9fr);
+      gap: 4rem;
+    }
+
+    .hero__visual {
+      min-height: 30rem;
+    }
+
+    .hero__mascot-frame {
+      width: min(100%, 27.5rem);
+      border-radius: 2.5rem;
+    }
+  }
+</style>
