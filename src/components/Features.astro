@@ -1,0 +1,163 @@
+---
+import {
+  BadgeCheck,
+  Code,
+  Command,
+  ListFilter,
+  PanelTop,
+  RotateCcw,
+} from "@lucide/astro";
+
+const features = [
+  {
+    title: "15 radios chilenas",
+    description: "Las principales radios nacionales en un solo lugar.",
+    Icon: BadgeCheck,
+  },
+  {
+    title: "Comandos slash",
+    description: "Comandos simples y modernos.",
+    Icon: Command,
+  },
+  {
+    title: "Autocompletado",
+    description: "Encuentra una radio rápidamente.",
+    Icon: ListFilter,
+  },
+  {
+    title: "Panel interactivo",
+    description: "Controla la radio desde Discord.",
+    Icon: PanelTop,
+  },
+  {
+    title: "Reconexión automática",
+    description: "El bot intenta recuperarse de cortes del stream.",
+    Icon: RotateCcw,
+  },
+  {
+    title: "Open source",
+    description: "Código disponible públicamente en GitHub.",
+    Icon: Code,
+  },
+] as const;
+---
+
+<section class="features" aria-labelledby="features-title">
+  <div class="container">
+    <div class="features__header">
+      <p class="features__eyebrow">CARACTERÍSTICAS</p>
+      <h2 id="features-title">Todo lo necesario para escuchar radio</h2>
+      <p>radioCL combina controles simples con funciones pensadas para Discord.</p>
+    </div>
+
+    <div class="features__grid">
+      {
+        features.map((feature) => {
+          const Icon = feature.Icon;
+
+          return (
+            <article class="features__item">
+              <div class="features__icon" aria-hidden="true">
+                <Icon size={18} stroke-width={2.25} />
+              </div>
+              <h3>{feature.title}</h3>
+              <p>{feature.description}</p>
+            </article>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .features {
+    padding-block: 4rem;
+  }
+
+  .features__header {
+    max-width: 43rem;
+  }
+
+  .features__eyebrow {
+    color: var(--color-cyan);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+  }
+
+  .features__header h2 {
+    margin-top: 0.875rem;
+    color: var(--color-text);
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    line-height: 1;
+    letter-spacing: -0.06em;
+  }
+
+  .features__header > p:last-child {
+    margin-top: 1rem;
+    color: var(--color-text-muted);
+    font-size: clamp(1rem, 3vw, 1.1875rem);
+    line-height: 1.6;
+  }
+
+  .features__grid {
+    display: grid;
+    gap: 0.875rem;
+    margin-top: 2rem;
+  }
+
+  .features__item {
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    background: rgba(11, 20, 40, 0.6);
+    padding: 1rem;
+  }
+
+  .features__icon {
+    display: grid;
+    width: 2rem;
+    height: 2rem;
+    place-items: center;
+    border: 1px solid rgba(34, 211, 238, 0.24);
+    border-radius: 0.75rem;
+    background: rgba(34, 211, 238, 0.08);
+    color: var(--color-cyan);
+  }
+
+  .features__icon :global(svg) {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+
+  .features h3 {
+    margin-top: 1rem;
+    color: var(--color-text);
+    font-size: 1.125rem;
+    line-height: 1.25;
+    letter-spacing: -0.035em;
+  }
+
+  .features__item p {
+    margin-top: 0.5rem;
+    color: var(--color-text-muted);
+    line-height: 1.55;
+  }
+
+  @media (min-width: 680px) {
+    .features__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 2.5rem;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    .features {
+      padding-block: 5rem;
+    }
+
+    .features__grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+</style>
