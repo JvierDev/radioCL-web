@@ -1,0 +1,194 @@
+---
+import { ExternalLink, Terminal } from "@lucide/astro";
+import { site } from "../data/site";
+
+const technologies = ["Node.js", "Discord.js", "TypeScript"] as const;
+---
+
+<section class="open-source" aria-labelledby="open-source-title">
+  <div class="container open-source__inner">
+    <div class="open-source__content">
+      <p class="open-source__eyebrow">OPEN SOURCE</p>
+      <h2 id="open-source-title">Desarrollado en Chile. Abierto para todos.</h2>
+      <p>
+        radioCL es un proyecto gratuito y open source. Puedes revisar el código,
+        proponer mejoras o aprender cómo funciona el bot desde GitHub.
+      </p>
+
+      <ul class="open-source__tech" aria-label="Tecnologías usadas por el bot">
+        {technologies.map((technology) => <li>{technology}</li>)}
+      </ul>
+
+      <a
+        class="open-source__link"
+        href={site.githubUrl}
+        target="_blank"
+        rel="noreferrer"
+      >
+        Ver en GitHub
+        <ExternalLink size={16} stroke-width={2.25} aria-hidden="true" />
+      </a>
+    </div>
+
+    <div class="open-source__terminal" aria-label="Comandos para clonar el proyecto">
+      <div class="open-source__terminal-header">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <p><Terminal size={16} stroke-width={2.25} aria-hidden="true" /> terminal</p>
+      </div>
+      <pre><code>git clone https://github.com/JvierDev/radio-cl.git
+cd radio-cl
+npm install</code></pre>
+    </div>
+  </div>
+</section>
+
+<style>
+  .open-source {
+    padding-block: 4rem;
+  }
+
+  .open-source__inner {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .open-source__content {
+    max-width: 43rem;
+  }
+
+  .open-source__eyebrow {
+    color: var(--color-cyan);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+  }
+
+  .open-source h2 {
+    margin-top: 0.875rem;
+    color: var(--color-text);
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    line-height: 1;
+    letter-spacing: -0.06em;
+  }
+
+  .open-source__content > p {
+    margin-top: 1rem;
+    color: var(--color-text-muted);
+    font-size: clamp(1rem, 3vw, 1.1875rem);
+    line-height: 1.6;
+  }
+
+  .open-source__tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+    margin-top: 1.5rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  .open-source__tech li {
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    background: rgba(11, 20, 40, 0.74);
+    color: var(--color-text);
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 750;
+  }
+
+  .open-source__link {
+    display: inline-flex;
+    min-height: 3rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.75rem;
+    border: 1px solid rgba(34, 211, 238, 0.35);
+    border-radius: 999px;
+    background: rgba(34, 211, 238, 0.09);
+    color: var(--color-text);
+    padding: 0.875rem 1.125rem;
+    font-size: 0.9375rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .open-source__link:hover {
+    border-color: rgba(34, 211, 238, 0.65);
+  }
+
+  .open-source__terminal {
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: 1.25rem;
+    background: #080f20;
+    box-shadow: 0 1.25rem 3rem rgba(0, 0, 0, 0.16);
+  }
+
+  .open-source__terminal-header {
+    display: flex;
+    min-height: 3rem;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-surface);
+    padding-inline: 1rem;
+  }
+
+  .open-source__terminal-header span {
+    width: 0.625rem;
+    height: 0.625rem;
+    border-radius: 999px;
+    background: var(--color-red);
+  }
+
+  .open-source__terminal-header span:nth-child(2) {
+    background: #fbbf24;
+  }
+
+  .open-source__terminal-header span:nth-child(3) {
+    background: #22c55e;
+  }
+
+  .open-source__terminal-header p {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    margin-left: auto;
+    color: var(--color-text-muted);
+    font-size: 0.8125rem;
+    font-weight: 700;
+  }
+
+  .open-source pre {
+    overflow-x: auto;
+    padding: 1.25rem;
+  }
+
+  .open-source code {
+    color: var(--color-text);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: clamp(0.8125rem, 3vw, 0.9375rem);
+    line-height: 1.8;
+  }
+
+  .open-source pre code::before {
+    color: var(--color-cyan);
+    content: "$ ";
+  }
+
+  @media (min-width: 900px) {
+    .open-source {
+      padding-block: 5rem;
+    }
+
+    .open-source__inner {
+      grid-template-columns: minmax(0, 0.95fr) minmax(24rem, 1.05fr);
+      gap: 4rem;
+    }
+  }
+</style>
