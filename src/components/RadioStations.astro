@@ -1,0 +1,117 @@
+---
+import { Radio } from "@lucide/astro";
+import { radios } from "../data/radios";
+---
+
+<section class="radio-stations" id="radios" aria-labelledby="radio-stations-title">
+  <div class="container">
+    <div class="radio-stations__header">
+      <p class="radio-stations__eyebrow">RADIOS</p>
+      <h2 id="radio-stations-title">Radios disponibles</h2>
+      <p>15 radios chilenas listas para escuchar.</p>
+    </div>
+
+    <ul class="radio-stations__grid" aria-label="Lista de radios disponibles">
+      {
+        radios.map((radio) => (
+          <li class="radio-stations__item">
+            <span class="radio-stations__icon" aria-hidden="true">
+              <Radio size={18} stroke-width={2.25} />
+            </span>
+            <span>{radio.name}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .radio-stations {
+    padding-block: 4rem;
+  }
+
+  .radio-stations__header {
+    max-width: 42rem;
+  }
+
+  .radio-stations__eyebrow {
+    color: var(--color-cyan);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+  }
+
+  .radio-stations__header h2 {
+    margin-top: 0.875rem;
+    color: var(--color-text);
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    line-height: 1;
+    letter-spacing: -0.06em;
+  }
+
+  .radio-stations__header > p:last-child {
+    margin-top: 1rem;
+    color: var(--color-text-muted);
+    font-size: clamp(1rem, 3vw, 1.1875rem);
+    line-height: 1.6;
+  }
+
+  .radio-stations__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin-top: 2rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  .radio-stations__item {
+    display: flex;
+    min-height: 4rem;
+    align-items: center;
+    gap: 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    background: rgba(11, 20, 40, 0.76);
+    color: var(--color-text);
+    padding: 0.875rem;
+    font-weight: 750;
+    letter-spacing: -0.02em;
+  }
+
+  .radio-stations__icon {
+    display: grid;
+    flex: 0 0 auto;
+    width: 2rem;
+    height: 2rem;
+    place-items: center;
+    border: 1px solid rgba(244, 63, 94, 0.22);
+    border-radius: 0.75rem;
+    background: rgba(244, 63, 94, 0.08);
+    color: var(--color-red);
+  }
+
+  .radio-stations__icon :global(svg) {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+
+  @media (min-width: 620px) {
+    .radio-stations__grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 900px) {
+    .radio-stations {
+      padding-block: 5rem;
+    }
+
+    .radio-stations__grid {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 0.875rem;
+      margin-top: 2.5rem;
+    }
+  }
+</style>

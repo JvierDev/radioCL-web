@@ -1,0 +1,17 @@
+export const radios = [
+  { name: "ADN", slug: "adn" },
+  { name: "Cooperativa", slug: "cooperativa" },
+  { name: "Bio-Bío", slug: "bio-bio" },
+  { name: "Futuro", slug: "futuro" },
+  { name: "Rock & Pop", slug: "rock-and-pop" },
+  { name: "Concierto", slug: "concierto" },
+  { name: "Carolina", slug: "carolina" },
+  { name: "Pudahuel", slug: "pudahuel" },
+  { name: "Disney", slug: "disney" },
+  { name: "FM Dos", slug: "fm-dos" },
+  { name: "Imagina", slug: "imagina" },
+  { name: "Corazón", slug: "corazon" },
+  { name: "Los 40", slug: "los-40" },
+  { name: "Romántica", slug: "romantica" },
+  { name: "Beethoven", slug: "beethoven" },
+] as const;
