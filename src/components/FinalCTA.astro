@@ -98,12 +98,17 @@ import { site } from "../data/site";
     color: var(--color-text);
     padding: 0.95rem 1.25rem;
     font-size: 1rem;
-    font-weight: 850;
+    font-weight: 800;
     line-height: 1;
+    transition:
+      background-color var(--transition-interactive),
+      border-color var(--transition-interactive),
+      transform var(--transition-interactive);
   }
 
   .final-cta__button:hover {
     background: #6671f3;
+    transform: translateY(-1px);
   }
 
   @media (min-width: 900px) {

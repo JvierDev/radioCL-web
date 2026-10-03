@@ -97,10 +97,15 @@ import { site } from "../data/site";
     font-size: 0.9375rem;
     font-weight: 800;
     line-height: 1;
+    transition:
+      background-color var(--transition-interactive),
+      border-color var(--transition-interactive),
+      transform var(--transition-interactive);
   }
 
   .support__link:hover {
     background: #fb5771;
+    transform: translateY(-1px);
   }
 
   @media (min-width: 820px) {

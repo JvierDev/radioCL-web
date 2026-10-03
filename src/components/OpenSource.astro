@@ -99,7 +99,7 @@ npm install</code></pre>
     color: var(--color-text);
     padding: 0.5rem 0.75rem;
     font-size: 0.875rem;
-    font-weight: 750;
+    font-weight: 700;
   }
 
   .open-source__link {
@@ -117,10 +117,16 @@ npm install</code></pre>
     font-size: 0.9375rem;
     font-weight: 800;
     line-height: 1;
+    transition:
+      border-color var(--transition-interactive),
+      background-color var(--transition-interactive),
+      transform var(--transition-interactive);
   }
 
   .open-source__link:hover {
     border-color: rgba(34, 211, 238, 0.65);
+    background: rgba(34, 211, 238, 0.13);
+    transform: translateY(-1px);
   }
 
   .open-source__terminal {
