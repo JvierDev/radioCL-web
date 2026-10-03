@@ -89,6 +89,35 @@ h6 {
   color: var(--color-text);
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 100;
+  transform: translateY(-150%);
+  border: 1px solid var(--color-cyan);
+  border-radius: 999px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  padding: 0.625rem 0.875rem;
+  font-size: 0.875rem;
+  font-weight: 800;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
 .container {
   width: min(100% - (var(--container-padding) * 2), var(--container-width));
   margin-inline: auto;

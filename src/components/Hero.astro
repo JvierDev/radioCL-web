@@ -16,7 +16,7 @@ const highlights = ["15 radios", "Gratis", "Hecho en Chile 🇨🇱"] as const;
         desde un canal de voz.
       </p>
 
-      <div class="hero__actions" aria-label="Acciones principales">
+      <div class="hero__actions" role="group" aria-label="Acciones principales">
         <a class="hero__button hero__button--primary" href={site.discordInviteUrl}>
           Añadir a Discord
         </a>
@@ -24,7 +24,8 @@ const highlights = ["15 radios", "Gratis", "Hecho en Chile 🇨🇱"] as const;
           class="hero__button hero__button--secondary"
           href={site.githubUrl}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
+          aria-label="Ver radioCL en GitHub, abre en una pestaña nueva"
         >
           Ver en GitHub
         </a>
@@ -35,7 +36,7 @@ const highlights = ["15 radios", "Gratis", "Hecho en Chile 🇨🇱"] as const;
       </ul>
     </div>
 
-    <div class="hero__visual" aria-label="Mascota de radioCL">
+    <div class="hero__visual">
       <span class="hero__decoration hero__decoration--note" aria-hidden="true">♪</span>
       <span class="hero__decoration hero__decoration--wave" aria-hidden="true">)))</span>
       <span class="hero__decoration hero__decoration--star" aria-hidden="true">+</span>

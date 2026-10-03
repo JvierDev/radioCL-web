@@ -17,12 +17,13 @@ const features = [
 
 <section class="quick-features" aria-label="Características rápidas">
   <div class="container quick-features__grid">
+    <h2 class="visually-hidden">Características rápidas</h2>
     {
       features.map((feature) => (
         <article class="quick-features__item">
           <span class="quick-features__marker" aria-hidden="true" />
           <div>
-            <h2>{feature.title}</h2>
+            <h3>{feature.title}</h3>
             <p>{feature.description}</p>
           </div>
         </article>
@@ -61,7 +62,7 @@ const features = [
     box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.08);
   }
 
-  .quick-features h2 {
+  .quick-features h3 {
     color: var(--color-text);
     font-size: 1rem;
     line-height: 1.2;

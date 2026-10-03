@@ -13,7 +13,11 @@ import { ChevronDown } from "@lucide/astro";
       </p>
     </div>
 
-    <div class="discord-panel__preview" aria-label="Vista previa del panel de radioCL en Discord">
+    <div
+      class="discord-panel__preview"
+      role="group"
+      aria-label="Vista previa del panel de radioCL en Discord"
+    >
       <div class="discord-panel__card">
         <div class="discord-panel__embed">
           <h3><span aria-hidden="true">📻</span> Panel de Control - Radio CL</h3>
@@ -33,12 +37,12 @@ import { ChevronDown } from "@lucide/astro";
           </div>
         </div>
 
-        <div class="discord-panel__select" aria-hidden="true">
+        <div class="discord-panel__select">
           <span>Selecciona una radio...</span>
-          <ChevronDown size={18} stroke-width={2.25} />
+          <ChevronDown size={18} stroke-width={2.25} aria-hidden="true" />
         </div>
 
-        <div class="discord-panel__actions" aria-hidden="true">
+        <div class="discord-panel__actions">
           <span class="discord-panel__button discord-panel__button--danger">Detener</span>
           <span class="discord-panel__button">Salir</span>
         </div>

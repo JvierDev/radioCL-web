@@ -23,14 +23,15 @@ const technologies = ["Node.js", "Discord.js", "TypeScript"] as const;
         class="open-source__link"
         href={site.githubUrl}
         target="_blank"
-        rel="noreferrer"
+        rel="noopener noreferrer"
+        aria-label="Ver radioCL en GitHub, abre en una pestaña nueva"
       >
         Ver en GitHub
         <ExternalLink size={16} stroke-width={2.25} aria-hidden="true" />
       </a>
     </div>
 
-    <div class="open-source__terminal" aria-label="Comandos para clonar el proyecto">
+    <div class="open-source__terminal" role="group" aria-label="Comandos para clonar el proyecto">
       <div class="open-source__terminal-header">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
