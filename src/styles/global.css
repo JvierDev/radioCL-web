@@ -30,6 +30,7 @@ html {
   color-scheme: dark;
   font-family: var(--font-sans);
   background: var(--color-bg);
+  scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -128,6 +129,12 @@ h6 {
 .site-shell {
   min-height: 100vh;
   overflow-x: clip;
+}
+
+#contenido,
+#radios,
+#comandos {
+  scroll-margin-top: 5.5rem;
 }
 
 .site-header {
