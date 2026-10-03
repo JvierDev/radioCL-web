@@ -1,0 +1,108 @@
+---
+import { ArrowRight } from "@lucide/astro";
+import { site } from "../data/site";
+---
+
+<section class="final-cta" aria-labelledby="final-cta-title">
+  <div class="container final-cta__inner">
+    <p class="final-cta__eyebrow">RADIO CHILENA EN SEGUNDOS</p>
+    <h2 id="final-cta-title">¿Listo para llevar la radio chilena a tu servidor?</h2>
+    <p>Añade radioCL y empieza a escuchar en segundos.</p>
+    <a class="final-cta__button" href={site.discordInviteUrl}>
+      Añadir a Discord
+      <ArrowRight size={17} stroke-width={2.25} aria-hidden="true" />
+    </a>
+  </div>
+</section>
+
+<style>
+  .final-cta {
+    padding-block: 4rem 5rem;
+  }
+
+  .final-cta__inner {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: 1.75rem;
+    background:
+      radial-gradient(circle at 18% 18%, rgba(34, 211, 238, 0.16), transparent 30%),
+      radial-gradient(circle at 82% 72%, rgba(88, 101, 242, 0.15), transparent 34%),
+      var(--color-surface-secondary);
+    padding-block: clamp(3rem, 8vw, 5rem);
+    padding-inline: clamp(1.25rem, 5vw, 4rem);
+    text-align: center;
+  }
+
+  .final-cta__inner::before,
+  .final-cta__inner::after {
+    position: absolute;
+    color: rgba(34, 211, 238, 0.4);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-weight: 900;
+    line-height: 1;
+    content: "♪";
+  }
+
+  .final-cta__inner::before {
+    top: 1.25rem;
+    left: 1.25rem;
+  }
+
+  .final-cta__inner::after {
+    right: 1.5rem;
+    bottom: 1.25rem;
+    color: rgba(244, 63, 94, 0.42);
+    content: "))";
+  }
+
+  .final-cta__eyebrow {
+    color: var(--color-cyan);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+  }
+
+  .final-cta h2 {
+    max-width: 50rem;
+    margin: 0.875rem auto 0;
+    color: var(--color-text);
+    font-size: clamp(2.25rem, 10vw, 4.5rem);
+    line-height: 0.98;
+    letter-spacing: -0.075em;
+  }
+
+  .final-cta p:not(.final-cta__eyebrow) {
+    margin-top: 1rem;
+    color: var(--color-text-muted);
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    line-height: 1.6;
+  }
+
+  .final-cta__button {
+    display: inline-flex;
+    min-height: 3.25rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+    border: 1px solid rgba(88, 101, 242, 0.55);
+    border-radius: 999px;
+    background: var(--color-discord);
+    color: var(--color-text);
+    padding: 0.95rem 1.25rem;
+    font-size: 1rem;
+    font-weight: 850;
+    line-height: 1;
+  }
+
+  .final-cta__button:hover {
+    background: #6671f3;
+  }
+
+  @media (min-width: 900px) {
+    .final-cta {
+      padding-block: 5rem 6rem;
+    }
+  }
+</style>
